@@ -82,31 +82,28 @@
             <a id="see-results" class="btn btn-danger btn-large" href="#/posts/draft-results">See Results</a>
         </p>
     
-        <div class="row">
+        
 
-        <div ui-sortable="sortableOptions" id="screen-{{index}}" class="apps-container screen" ng-model="screen" ng-repeat="screen in rawScreens">
-            <div class="app " ng-repeat="app in screen">
-                {{$index + 1}}
-                <img class="img-responsive center-block" ng-src="{{app.imgPath}}" alt="">
+            <div ui-sortable="sortableOptions" id="screen-{{index}}" class="apps-container screen row" ng-model="screen" ng-repeat="screen in rawScreens">
+                <div class="app col-lg-2 col-md-2 col-xs-6" ng-repeat="app in screen">
+                    {{$index + 1}}
+                    <img class="img-responsive center-block" ng-src="{{app.imgPath}}" alt="">
+                </div>
             </div>
-        </div>
 
-        <div ng-repeat="playerRank in playerRanks">
-            <div id="dropzone-{{playerRank}}" data-drag="true" jqyoui-droppable class="col-lg-2 col-md-2 col-xs-6 thumbnail">
-                #{{playerRank}}
+<!--
+            <div ng-repeat="playerRank in playerRanks">
+                <div id="dropzone-{{playerRank}}" data-drag="true" jqyoui-droppable class="col-lg-2 col-md-2 col-xs-6 thumbnail">
+                    #{{playerRank}}
+                </div>
             </div>
-        </div>
 
-        <div ng-repeat="player in roster">
-            <div id="{{player.name}}" data-drag="true" jqyoui-draggable="{animate: true}" class="col-lg-2 col-md-2 col-xs-6 thumb">
-                <img class="img-responsive center-block" ng-src="{{player.imgPath}}" alt="">
+            <div ng-repeat="player in roster">
+                <div id="{{player.name}}" data-drag="true" jqyoui-draggable="{animate: true}" class="col-lg-2 col-md-2 col-xs-6 thumb">
+                    <img class="img-responsive center-block" ng-src="{{player.imgPath}}" alt="">
+                </div>
             </div>
-        </div>
-
-     
-
-
-        </div>
+        
 
         
     </div>
