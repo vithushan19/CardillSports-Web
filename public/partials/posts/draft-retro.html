@@ -84,9 +84,11 @@
     
         
 
-            <div ui-sortable="sortableOptions" id="screen-{{index}}" class="apps-container screen row" ng-model="screen" ng-repeat="screen in rawScreens">
+            <div ui-sortable="sortableOptions" id="screen-{{$index}}" class="apps-container screen row" ng-model="screen" ng-repeat="screen in rawScreens">
                 <div class="app col-lg-2 col-md-2 col-xs-6" ng-repeat="app in screen">
-                    {{$index + 1}}
+                    <div ng-if="screen == list1">
+                        {{$index + 1}}
+                    </div>
                     <img class="img-responsive center-block" ng-src="{{app.imgPath}}" alt="">
                 </div>
             </div>

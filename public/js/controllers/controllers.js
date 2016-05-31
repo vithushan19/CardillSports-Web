@@ -103,7 +103,9 @@ myApp.controller('DraftRetroCtrl', [
             update: function(event, ui) {
                 // check that its an actual moving
                 // between the two lists
-                if (event.target.id !== 'screen-1' && ui.item.sortable.droptarget.attr('id') === 'screen-1' && $scope.rawScreens[1].length >= 10) {
+                console.log(event.target.id);
+                console.log(ui.item.sortable.droptarget.attr('id'));
+                if (event.target.id !== 'screen-0' && ui.item.sortable.droptarget.attr('id') === 'screen-0' && $scope.rawScreens[0].length >= 12) {
                     ui.item.sortable.cancel();
                 }
             }
