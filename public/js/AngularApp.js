@@ -5,7 +5,7 @@ var myApp = angular.module('myApp',
     [   'myApp.controllers',
         'ngGrid', // angular grid
         'ui.router',
-        'ngDragDrop',
+        'ui.sortable',
         'ui', // angular ui
         'ngSanitize', // for html-bind in ckeditor
         'ui.bootstrap', // jquery ui bootstrap
