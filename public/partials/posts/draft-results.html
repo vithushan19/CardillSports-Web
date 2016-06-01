@@ -76,90 +76,23 @@
         </header>
 
 
+        <p class="post-text">
+        Draft rankings ordered by popularity. Is your ranking on the list?
+        </p>
+
         <p><a id="go-back" class="btn btn-danger btn-large" href="#/posts/draft-retro">Go Back</a></p>
-    
-        <div class="row">
 
-     
-
-    <div ng-repeat="rankings in rankings">
-      {{rankings}}
-    </div>
-
-    <form ng-submit="addPost()">
-        <input type="text" ng-model="title"></input>
-        <button type="submit">Post</button>
-    </form>
-
-
-
-            <div id="al-horford" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/al_horford.png" alt="">
+        <div class="row result-row" ng-repeat="ranking in rankings">
+          <div ng-repeat="player in ranking">
+            <div id="{{player.title}}" class="col-lg-2 col-md-2 col-xs-2 draft-result">
+                    <img class="center-block img-responsive" ng-src="{{player.imgPath}}" alt="">
+                    <div ng-if="$index < 12">
+                        <h3>{{$index + 1}}</h3>
+                    </div>
+                    
             </div>
-            <div id="anthony-davis" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/anthony_davis.png" alt="">
-            </div>
-
-            <div id="chris-paul" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/chris_paul.png" alt="">
-            </div>
-             <div id="damian-lillard" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/damian_lillard.png" alt="">
-            </div>
-             <div id="demarcus-cousins" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/demarcus_cousins.png" alt="">
-            </div>
-             <div id="draymond-green" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/draymond_green.png" alt="">
-            </div>
-             <div id="hassan-whiteside" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/hassan_whiteside.png" alt="">
-            </div>
-             <div id="james-harden" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/james_harden.png" alt="">
-            </div>
-             <div id="jimmy-butler" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/jimmy_butler.png" alt="">
-            </div>
-             <div id="john-wall" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/john_wall.png" alt="">
-            </div>
-             <div id="karl-anthony-towns" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/karl-anthony_towns.png" alt="">
-            </div>
-             <div id="kawhi-leonard" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/kawhi_leonard.png" alt="">
-            </div>
-             <div id="klay-thompson" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/klay_thompson.png" alt="">
-            </div>
-             <div id="kyle-lowry" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/kyle_lowry.png" alt="">
-            </div>
-             <div id="lebron-james" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/lebron_james.png" alt="">
-            </div>
-             <div id="paul-george" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/paul_george.png" alt="">
-            </div>
-             <div id="paul-millsap" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/paul_millsap.png" alt="">
-            </div>
-             <div id="russell-westbrook" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/russell_westbrook.png" alt="">
-            </div>
-             <div id="stephen-curry" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/stephen_curry.png" alt="">
-            </div>
-            <div id="kevin-durant" class="col-lg-1 col-md-1 col-xs-1 thumb img-responsive">
-                <img class="img-responsive center-block" src="/images/roster/kevin_durant.png" alt="">
-            </div>
-            
-           
-
-
+          </div>
         </div>
-
         
     </div>
 

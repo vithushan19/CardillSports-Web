@@ -113,6 +113,10 @@ body {
   margin: auto;
 }
 
+.draft-result h3 {
+  color: #FFFFFF
+}
+
 h2,
 h3 {
   text-align: center;
@@ -128,4 +132,8 @@ h3 {
 
 .clear {
   clear: both;
+}
+
+.result-row {
+  margin-bottom: 75px;
 }

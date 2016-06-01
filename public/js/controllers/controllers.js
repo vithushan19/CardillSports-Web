@@ -112,17 +112,12 @@ myApp.controller('DraftRetroCtrl', [
                 result[index] = $scope.list1[item];
                 index++;
             }
-
-            delete result['3'];
-            console.log("ANU:::" + JSON.stringify(result));
-
-            // {"1":{"title":"chris-paul","imgPath":"/images/roster/chris_paul.png","$$hashKey":"object:15"},"2":{"title":"damian-lillard","imgPath":"/images/roster/damian_lillard.png","$$hashKey":"object:16"}}
-            rankings.create(JSON.stringify(result));
+            
             if (len == 12) {
                 delete result['13'];
-                
+                rankings.create(JSON.stringify(result));    
             } else {
-               // alert("NEED 12 selections, HAVE " + len);
+                alert("NEED 12 selections, HAVE " + len);
             }
             
         }
