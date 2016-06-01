@@ -16,17 +16,21 @@ myApp.controller('PostsCtrl', [
 myApp.factory('rankings', ['$http', function($http){
     var o = {
         rankings: [
-            {title: 'post 1', upvotes: 5},
-            {title: 'post 2', upvotes: 2},
-            {title: 'post 3', upvotes: 15},
-            {title: 'post 4', upvotes: 9},
-            {title: 'post 5', upvotes: 4}
+          
         ]
     };
 
     o.getAll = function() {
         return $http.get('/api/rankings').success(function(data){
             angular.copy(data, o.rankings);
+        });
+    };
+
+    o.create = function(ranking) {
+        return $http.post('/api/ranking', ranking).success(function(data){
+            console.log("ANU " + JSON.stringify(ranking));
+            console.log("ANU " + JSON.stringify(data));
+            o.rankings.push(data);
         });
     };
 
@@ -73,24 +77,13 @@ myApp.factory('roster', [function(){
 myApp.controller('DraftRetroCtrl', [
     '$scope',
     'playerRanks',
+    'rankings',
     'roster',
-    function($scope, playerRanks, roster){
+    function($scope, playerRanks, rankings, roster){
         $scope.playerRanks = playerRanks.playerRanks;
         $scope.roster = roster.roster;
-        function makeList (letter) {
-            var tmpList = [];
-
-            for (var i = 1; i <= 6; i++){
-                tmpList.push({
-                    title: 'Item ' + i + letter,
-                    imgPath: i
-                });
-            }
-            return tmpList;
-        }
   
         $scope.list1 = [];
-        $scope.list2 = makeList('b');
       
         $scope.rawScreens = [
             $scope.list1,
@@ -102,14 +95,37 @@ myApp.controller('DraftRetroCtrl', [
             connectWith: ".apps-container",
             update: function(event, ui) {
                 // check that its an actual moving
-                // between the two lists
-                console.log(event.target.id);
-                console.log(ui.item.sortable.droptarget.attr('id'));
+                // between the two lists            
                 if (event.target.id !== 'screen-0' && ui.item.sortable.droptarget.attr('id') === 'screen-0' && $scope.rawScreens[0].length >= 12) {
                     ui.item.sortable.cancel();
                 }
             }
         };
+
+        $scope.submit = function() {
+            var len = Object.keys($scope.list1).length - 1;
+            var result = {};
+            var index = 1;
+
+            for (var item in $scope.list1) {
+                delete $scope.list1[item]['$$hashKey'];
+                result[index] = $scope.list1[item];
+                index++;
+            }
+
+            delete result['3'];
+            console.log("ANU:::" + JSON.stringify(result));
+
+            // {"1":{"title":"chris-paul","imgPath":"/images/roster/chris_paul.png","$$hashKey":"object:15"},"2":{"title":"damian-lillard","imgPath":"/images/roster/damian_lillard.png","$$hashKey":"object:16"}}
+            rankings.create(JSON.stringify(result));
+            if (len == 12) {
+                delete result['13'];
+                
+            } else {
+               // alert("NEED 12 selections, HAVE " + len);
+            }
+            
+        }
     }]
 
 );

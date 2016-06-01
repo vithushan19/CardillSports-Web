@@ -15,4 +15,4 @@ var PlayerRankingSchema = new mongoose.Schema({
   12: String
 });
 
-mongoose.model('PlayerRanking', PlayerRankingSchema);
+//var PlayerRanking = mongoose.model('PlayerRanking', PlayerRankingSchema);
