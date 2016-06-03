@@ -58,11 +58,14 @@
         </br>
 
         <p>
-            <a id="submit" ng-click="submit()" class="btn btn-danger btn-large">Submit</a>
-            <a id="see-results" class="btn btn-danger btn-large" href="#/posts/draft-results">See Results</a>
+            <a id="submit" ng-click="submit()" class="btn btn-primary btn-large">Submit</a>
+            <a id="see-results" class="btn btn-primary btn-large" href="#/posts/draft-results">See Results</a>
+        </p>
+        <p class="post-text">
+        Drag and drop your top 12 into the top box.
         </p>
     
-        
+        <input type="text" ng-model="submitter">
 
         <div ui-sortable="sortableOptions" id="screen-{{$index}}" class="apps-container screen row" ng-model="screen" ng-repeat="screen in rawScreens">
             <div class="app col-lg-2 col-md-2 col-xs-6" ng-repeat="app in screen">

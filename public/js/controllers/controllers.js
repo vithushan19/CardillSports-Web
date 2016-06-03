@@ -82,7 +82,7 @@ myApp.controller('DraftRetroCtrl', [
     function($scope, playerRanks, rankings, roster){
         $scope.playerRanks = playerRanks.playerRanks;
         $scope.roster = roster.roster;
-  
+        $scope.submitter = "Enter your name";
         $scope.list1 = [];
       
         $scope.rawScreens = [
@@ -111,6 +111,10 @@ myApp.controller('DraftRetroCtrl', [
                 delete $scope.list1[item]['$$hashKey'];
                 result[index] = $scope.list1[item];
                 index++;
+            }
+
+            if ($scope.submitter != 'Your name') {
+                result['submitter'] = $scope.submitter;
             }
             
             if (len == 12) {

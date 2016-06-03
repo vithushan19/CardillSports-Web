@@ -43,7 +43,7 @@
 
         <header class="jumbotron img-responsive draft-retro">
 
-        <div class="container article-header">
+        <div class="article-header">
                 <h1>Draft Results</h1>
                 <p>Vithushan Nama | Contributor</p>        
         </div> 
@@ -54,9 +54,10 @@
         Draft rankings ordered by popularity. Is your ranking on the list?
         </p>
 
-        <p><a id="go-back" class="btn btn-danger btn-large" href="#/posts/draft-retro">Go Back</a></p>
+        <p><a id="go-back" class="btn btn-primary btn-large" href="#/posts/draft-retro">Go Back</a></p>
 
         <div class="row result-row" ng-repeat="ranking in rankings">
+          <p class="post-text">Submitter: {{ranking.submitter}}</p>
           <div ng-repeat="player in ranking">
             <div id="{{player.title}}" class="col-lg-2 col-md-2 col-xs-2 draft-result">
                     <img class="center-block img-responsive" ng-src="{{player.imgPath}}" alt="">
@@ -66,6 +67,8 @@
                     
             </div>
           </div>
+         
+
         </div>
         
     </div>

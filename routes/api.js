@@ -14,7 +14,8 @@ var PlayerRankingSchema = new mongoose.Schema({
     9: Object,
     10: Object,
     11: Object,
-    12: Object
+    12: Object,
+    submitter: String
 });
 
 var PlayerRanking = mongoose.model('PlayerRanking', PlayerRankingSchema);
