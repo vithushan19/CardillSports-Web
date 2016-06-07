@@ -46,6 +46,11 @@ function($stateProvider, $urlRouterProvider) {
         templateUrl: '/partials/posts/draft-retro.html',
         controller: 'DraftRetroCtrl'
     })
+    .state('finals-preview', {
+        url: '/posts/finals-preview',
+        templateUrl: '/partials/posts/finals-preview.html',
+        controller: 'PostsCtrl'
+    })
     .state('not-so-fast', {
         url: '/posts/not-so-fast',
         templateUrl: '/partials/posts/not-so-fast.html',

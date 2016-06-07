@@ -59,12 +59,11 @@
         <div class="row result-row" ng-repeat="ranking in rankings">
           <p class="post-text">Submitter: {{ranking.submitter}}</p>
           <div ng-repeat="player in ranking">
-            <div id="{{player.title}}" class="col-lg-2 col-md-2 col-xs-2 draft-result">
-                    <img class="center-block img-responsive" ng-src="{{player.imgPath}}" alt="">
-                    <div ng-if="$index < 12">
-                        <h3>{{$index + 1}}</h3>
-                    </div>
-                    
+            <div ng-if="$index < 12">
+                <div id="{{player.title}}" class="col-lg-2 col-md-2 col-xs-2 draft-result">
+                        <h3 class="draft-result-index">{{$index + 1}}</h3>
+                        <img class="center-block img-responsive draft-result-img" ng-src="{{player.imgPath}}" alt="">      
+                </div>
             </div>
           </div>
          

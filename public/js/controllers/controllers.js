@@ -111,15 +111,17 @@ myApp.controller('DraftRetroCtrl', [
                 delete $scope.list1[item]['$$hashKey'];
                 result[index] = $scope.list1[item];
                 index++;
-            }
-
-            if ($scope.submitter != 'Your name') {
-                result['submitter'] = $scope.submitter;
-            }
+            } 
             
             if (len == 12) {
-                delete result['13'];
-                rankings.create(JSON.stringify(result));    
+                if ($scope.submitter != 'Enter your name') {
+                    result['submitter'] = $scope.submitter;
+                    delete result['13'];
+                    rankings.create(JSON.stringify(result));    
+                    alert("Thank you! Go to see results!");
+                } else {
+                    alert("Please enter your name");
+                }
             } else {
                 alert("NEED 12 selections, HAVE " + len);
             }
@@ -132,30 +134,8 @@ myApp.controller('DraftRetroCtrl', [
 myApp.controller('DraftCtrl', [
     '$scope',
     'rankings',
-    function($scope, rankings){
-        $scope.test = 'Hello world!';
-       
+    function($scope, rankings){    
         $scope.rankings = rankings.rankings;
-
-        $scope.addPost = function(){
-            if(!$scope.title || $scope.title === '') { return; }
-            $scope.rankings.push({title: $scope.title, upvotes: 0});
-            $scope.title = '';
-            
-        };
-
-        
-      
-        $scope.logModels = function () {
-            $scope.sortingLog = [];    
-            for (var i = 0; i < $scope.rawScreens.length; i++) {
-                var logEntry = $scope.rawScreens[i].map(function (x) {
-                    return x.title;
-                }).join(', ');
-                logEntry = 'container ' + (i+1) + ': ' + logEntry;
-                $scope.sortingLog.push(logEntry);
-            }
-        };
 
     }]
 

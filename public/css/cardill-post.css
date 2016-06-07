@@ -34,6 +34,13 @@
     
 }
 
+.finals-preview {
+  background: 
+      url(/images/finals-preview.jpg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+}
+
 .the-day-i-said-what-if {
     background: 
       url(/images/the-day-i-said-what-if.jpg);
@@ -111,10 +118,6 @@ body {
 .container {
   width: 800px;
   margin: auto;
-}
-
-.draft-result h3 {
-  color: #FFFFFF
 }
 
 h2,

@@ -52,6 +52,22 @@ h3 {
 	color: #FFFFFF
 }
 
+.draft-result h3 {
+  padding-top:20px;
+}
+
+.draft-result {
+  color: #FFFFFF
+}
+
+.draft-result-index {
+	margin-top: 0px;
+}
+
+.draft-result-img {
+	margin-bottom: 25px;
+}
+
 .jumbotron p {
 	color: #FFFFFF
 }
