@@ -14,11 +14,8 @@
 	        });
 	    };
 
-	    o.create = function(ranking) {
-	    	console.log(ranking);
-	        return $http.post('/api/ranking', ranking).success(function(data){
-	            console.log("ANU " + JSON.stringify(ranking));
-	            console.log("ANU " + JSON.stringify(data));
+	    o.create = function(ranking) {	    	
+	        return $http.post('/api/ranking', ranking).success(function(data){	            
 	            o.rankings.push(data);
 	        });
 	    };
@@ -146,6 +143,11 @@
 	        url: '/posts/draft-results',
 	        templateUrl: '/partials/posts/draft-results.html',
 	        controller: 'DraftCtrl',
+	        resolve: {
+   				postPromise: ['rankings', function(rankings){
+      				return rankings.getAll();
+    			}]
+    		}
 	       
 	    })
 	    .state('draft-retro', {
