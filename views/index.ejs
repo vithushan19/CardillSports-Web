@@ -1,115 +1,115 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<html lang="en">
 
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Angular Enterprise Seed</title>
-    <link REL="SHORTCUT ICON" HREF="favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="">
 
-    <style>
-        body {
-            padding-top: 55px;
-            padding-bottom: 75px;
-        }
-    </style>
+    <title>Freelancer - Start Bootstrap Theme</title>
 
-    <link rel="stylesheet" href="css/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/vendor/ng-grid/ng-grid.css">
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- TODO needed? -->
-    <link rel="stylesheet" href="css/vendor/angularstrap/styles.css">
-    <link rel="stylesheet" href="css/vendor/angularstrap/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/vendor/angularstrap/bootstrap-timepicker.css">
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/cardill-features.css">
-    <link rel="stylesheet" href="css/cardill-post.css">
-    <!-- <link rel="stylesheet" href="css/vendor/animate/animate.css"> -->
-    <link rel="stylesheet" href="css/app.css" type="text/css"/>
+    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="css/cardill-post.css" rel="stylesheet">
 
-    
 
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
-<body ng-app="myApp">
+<body ng-app="cardillApp" id="page-top" class="index">
 
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade
-    your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
-    improve your experience.</p>
-<![endif]-->
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Cardill Sports</a>
+            </div>
 
-<!-- bootstrap navbar -->
-<div ng-include="'partials/navbar-top.html'"></div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 
-<!-- ui routes hook -->
-<ui-view></ui-view>
+    <!-- bootstrap navbar -->
+    <div ng-include="'partials/navbar-top.html'"></div>
 
+    <!-- ui routes hook -->
+    <ui-view></ui-view>
 
-<!-- bootstrap navbar -->
-<div ng-include="'partials/navbar-bottom.html'"></div>
+    <div ng-include="'partials/navbar-bottom.html'"></div>
 
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-<script src="js/vendor/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-<script src="js/jquery-1.10.2.min.js"></script>
-<script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-1.10.2.min.js"><\/script>')</script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
-<script src="js/vendor/bootstrap/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
 
-<!-- TODO localize -->
-<script src="js/jquery-ui.min.js"></script>
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
 
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
 
-<script src="js/angular.min.js"></script>
-<script src="js/angular-ui-router.js"></script>
-<script src="js/vendor/angularui/angular-ui.js"></script>
+    <script src="js/angular.min.js"></script>
+    
+    <!-- Sortable.js -->
+    <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
 
-<script src="js/vendor/ng-grid/ng-grid.js"></script>
+    <!-- ng-sortable.js -->
+    <script src="http://rubaxa.github.io/Sortable/ng-sortable.js"></script>
 
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/cardillApp.js"></script>
 
-
-<!-- TODO needed?  Then localize... -->
-<script src="js/ui-bootstrap-tpls-0.1.0-SNAPSHOT.js"></script>
-
-<!-- enables rendering of injected html -->
-<!-- TODO localize -->
-<script src="js/angular-sanitize-1.0.1.js"></script>
-
-<!-- angular strap -->
-<!-- TODO move from cdn to local -->
-
-
-<!-- TODO consider using NPM/Bower to install third party libs -->
-
-<!-- TODO needed? -->
-<script src="js/vendor/angularstrap/angular-strap.min.js"></script>
-<script src="js/vendor/angularstrap/bootstrap-datepicker.js"></script>
-<script src="js/vendor/angularstrap/bootstrap-timepicker.js"></script>
-
-<!--  TODO compile/optimise these during build -->
-<script src="js/AngularApp.js"></script>
-<script src="js/controllers/controllers.js"></script>
-
-<script type="text/javascript" src="js/vendor/noty-2.1.0/js/noty/jquery.noty.js"></script>
-
-<script type="text/javascript" src="js/vendor/noty-2.1.0/js/noty/layouts/bottomRight.js"></script>
-
-<script type="text/javascript" src="js/vendor/noty-2.1.0/js/noty/themes/nucleus.js"></script>
-
-<script src="js/sortable.js"></script>
-
+    
+    
 </body>
+
 </html>

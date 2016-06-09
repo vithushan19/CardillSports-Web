@@ -3,63 +3,31 @@
 }
 
 .power-of-veto {
-    background: 
-      url(/images/power-of-veto.jpg);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-    height: 500px;
-    -moz-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    color: #FFF; 
+    background-image: url(/images/power-of-veto.jpg);
 }
 
 .draft-retro {
-	background: 
-	    url(/images/draft-retro.png);
-	    background-repeat: no-repeat;
-	    background-size: 100% 100%;
-    height: 500px;
-    -moz-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    color: #FFF; 
+	 background-image: url(/images/draft-retro.png);
 }
 
 .not-so-fast {
-  background: 
-      url(/images/not-so-fast.png);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-    
+    background-image: url(/images/not-so-fast.jpg);
 }
 
 .finals-preview {
-  background: 
-      url(/images/finals-preview.jpg);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+    background-image: url(/images/finals-preview.png);      
 }
 
 .the-day-i-said-what-if {
-    background: 
-      url(/images/the-day-i-said-what-if.jpg);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+    background-image: url(/images/the-day-i-said-what-if.png);      
 }
 
 .rd2-gm7 {
-    background: 
-      url(/images/rd2-gm7.jpg);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+    background-image: url(/images/rd2-gm7.png);   
 }
 
 .f-clevland {
-    background: 
-      url(/images/f-clevland.jpg);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+    background-image: url(/images/f-clevland.png);
 }
 
 .list {
@@ -88,54 +56,6 @@
 }
 
 
-/***  Extra ***/
-
-body {
-  font-family: Verdana, 'Trebuchet ms', Tahoma;
-}
-
-.logList {
-  margin-top: 20px;
-  width: 300px;
-  min-height: 300px;
-  padding: 5px 15px;
-  border: 5px solid #000;
-  border-radius: 15px;
-}
-
-.logItem {
-  margin-bottom: 10px;
-}
-
-.logList:before {
-  content: 'log';
-  padding: 0 5px;
-  position: relative;
-  top: -1.1em;
-  background-color: #FFF;
-}
-
-.container {
-  width: 800px;
-  margin: auto;
-}
-
-h2,
-h3 {
-  text-align: center;
-}
-
-.floatleft {
-  float: left;
-}
-
-.floatright {
-  float: right;
-}
-
-.clear {
-  clear: both;
-}
 
 .result-row {
   margin-bottom: 50px;

@@ -84,7 +84,7 @@ myApp.controller('DraftRetroCtrl', [
         $scope.roster = roster.roster;
         $scope.submitter = "Enter your name";
         $scope.list1 = [];
-      
+        $scope.hello = "VITHUSHAN";
         $scope.rawScreens = [
             $scope.list1,
             $scope.roster

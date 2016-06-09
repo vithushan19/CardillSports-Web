@@ -1,168 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Page Content -->
+<div class="container">
 
-<head>
+    <header class="jumbotron finals-preview">
+        <div class="article-header">
+            <h1>NBA Finals Preview</h1>
+            <p>JV Dave | Contributor</p>
+            <p>
+                <a href="#/posts/finals-preview" class="btn btn-danger btn-large">Read More</a>
+            </p>
+        </div> 
+    </header>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Cardill Sports</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/cardill-features.css" rel="stylesheet">
-    <link href="css/cardill-post.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <header class="jumbotron finals-preview">
-            <div class="container article-header">
-                <h1>NBA Finals Preview</h1>
-                <p>JV Dave | Contributor</p>
-                <p>
-                    <a href="#/posts/finals-preview" class="btn btn-danger btn-large">Read More</a>
-                </p>
-            </div> 
-        </header>
-
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Latest Features</h3>
-            </div>
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="post-text">Latest Features</h3>
         </div>
-        <!-- /.row -->
-
-        <!-- Page Features -->
-        <div class="row text-center">
-
-            <div class="col-md-3 col-sm-3 ">
-                <div class="thumbnail">
-                    <img class="article-image" src="images/not-so-fast.png" alt="">
-                    <div class="caption">
-                        <h3 class="feature-label">Not So Fast</h3>
-                        <p>Zen Potter</p>
-                        <p>
-                            <a href="#/posts/not-so-fast" class="btn btn-danger">Read More</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-3 ">
-                <div class="thumbnail">
-                    <img class="article-image" src="images/f-clevland.jpg" alt="">
-                    <div class="caption">
-                        <h3 class="feature-label">F*** Clevland</h3>
-                        <p>Lucksson Nama</p>
-                        <p>
-                            <a href="#/posts/f-clevland" class="btn btn-danger">Listen Now</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-3 ">
-                <div class="thumbnail">
-                    <img class="article-image" src="images/draft-retro.png" alt="">
-                    <div class="caption">
-                        <h3 class="feature-label">Draft Retrospective</h3>
-                        <p>Vithushan Nama</p>
-                        <p>
-                            <a href="#/posts/draft-retro" class="btn btn-danger">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-3 ">
-                <div class="thumbnail">
-                    <img class="article-image" src="images/rd2-gm7.jpg" alt="">
-                    <div class="caption">
-                        <h3 class="feature-label">Round 2 Game 7 Preview</h3>
-                        <p>Vithushan Nama</p>
-                        <p>
-                            <a href="#/posts/rd2-gm7" class="btn btn-danger">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        
-        <div class="row text-center">
-
-            <div class="col-md-3 col-sm-3 ">
-                <div class="thumbnail">
-                    <img class="article-image" src="images/power-of-veto.jpg" alt="">
-                    <div class="caption">
-                        <h3 class="feature-label">The Power of Veto</h3>
-                        <p>Vithushan Nama</p>
-                        <p>
-                            <a href="#/posts/power-of-veto" class="btn btn-danger">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-3 ">
-                <div class="thumbnail">
-                    <img  class="article-image" src="images/the-day-i-said-what-if.jpg" alt="">
-                    <div class="caption">
-                        <h3 class="feature-label">The Day I Said What If</h3>
-                        <p>Zen Potter</p>
-                        <p>
-                            <a href="#/posts/the-day-i-said-what-if" class="btn btn-danger">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-3 ">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-danger">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
     </div>
-    <!-- /.container -->
+    <!-- /.row -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <div ng-repeat="article in articles">
+        <div class="col-md-3 col-sm-3 ">
+            <div class="thumbnail">
+                <img class="article-image" ng-src="{{article.imgPath}}" alt="">
+                <div class="caption">
+                    <h3 class="feature-label">{{article.title}}</h3>
+                    
+                    <p class="center-block">{{article.author}}</p>
+                    <p>
+                        <a href="{{article.link}}" class="btn btn-danger">Read More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    
-
-</body>
-
-</html>
+    <!-- /.row -->
+</div>

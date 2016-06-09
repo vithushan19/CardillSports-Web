@@ -3,13 +3,7 @@
 // declare top-level module which depends on filters,and services
 var myApp = angular.module('myApp',
     [   'myApp.controllers',
-        'ngGrid', // angular grid
-        'ui.router',
-        'ui.sortable',
-        'ui', // angular ui
-        'ngSanitize', // for html-bind in ckeditor
-        'ui.bootstrap', // jquery ui bootstrap
-        '$strap.directives' // angular strap
+        'ui.router'
     ]);
 
 
