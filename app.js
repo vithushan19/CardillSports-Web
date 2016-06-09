@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/api', api);
 
-mongoose.connect('mongodb://ds011374.mlab.com:11374/heroku_53l1jfqz');
+mongoose.connect('mongodb://vithushan:cardill@ds011374.mlab.com:11374/heroku_829z6sss');
 //mongoose.connect('mongodb://localhost/test');
 
 // catch 404 and forward to error handler
