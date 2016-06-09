@@ -12,9 +12,7 @@ angular.module('cardillApp').factory('roster', [function(){
 			{title: 'damian-lillard', imgPath: '/images/roster/damian_lillard.png'},
 			{title: 'kawhi-leonard', imgPath: '/images/roster/kawhi_leonard.png'},	            
             {title: 'jimmy-butler', imgPath: '/images/roster/jimmy_butler.png'},
-            {title: 'klay-thompson', imgPath: '/images/roster/klay_thompson.png'},	           
-            {title: 'john-wall', imgPath: '/images/roster/john_wall.png'},
-            {title: 'paul-millsap', imgPath: '/images/roster/paul_millsap.png'}	           
+            {title: 'klay-thompson', imgPath: '/images/roster/klay_thompson.png'}         
         ]
     };
     return o;
