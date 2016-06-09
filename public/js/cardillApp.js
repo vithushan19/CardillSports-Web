@@ -177,7 +177,7 @@
 	    .state('draft-retro', {
 	        url: '/posts/draft-retro',
 	        templateUrl: '/partials/posts/draft-retro.html',
-	        controller: 'DraftRetroCtrl'
+	        controller: 'DraftRetroController'
 	    })
 	    .state('finals-preview', {
 	        url: '/posts/finals-preview',
