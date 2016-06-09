@@ -15,6 +15,7 @@
 	    };
 
 	    o.create = function(ranking) {
+	    	console.log(ranking);
 	        return $http.post('/api/ranking', ranking).success(function(data){
 	            console.log("ANU " + JSON.stringify(ranking));
 	            console.log("ANU " + JSON.stringify(data));
@@ -36,27 +37,21 @@
 
 	app.factory('roster', [function(){
 	    var o = {
-	        roster: [
-	            {title: 'al-horford', imgPath: '/images/roster/al_horford.png'},
+	        roster: [	            
 	            {title: 'anthony-davis', imgPath: '/images/roster/anthony_davis.png'},
-	            {title: 'chris-paul', imgPath: '/images/roster/chris_paul.png'},
-	            {title: 'damian-lillard', imgPath: '/images/roster/damian_lillard.png'},
-	            {title: 'demarcus-cousins', imgPath: '/images/roster/demarcus_cousins.png'},
-	            {title: 'draymond-green', imgPath: '/images/roster/draymond_green.png'},
-	            {title: 'hassan-whiteside', imgPath: '/images/roster/hassan_whiteside.png'},
-	            {title: 'james-harden', imgPath: '/images/roster/james_harden.png'},
-	            {title: 'jimmy-butler', imgPath: '/images/roster/jimmy_butler.png'},
-	            {title: 'john-wall', imgPath: '/images/roster/john_wall.png'},
-	            {title: 'karl-anthony-towns', imgPath: '/images/roster/karl-anthony_towns.png'},
-	            {title: 'kawhi-leonard', imgPath: '/images/roster/kawhi_leonard.png'},
-	            {title: 'klay-thompson', imgPath: '/images/roster/klay_thompson.png'},
-	            {title: 'kyle-lowry', imgPath: '/images/roster/kyle_lowry.png'},
-	            {title: 'lebron-james', imgPath: '/images/roster/lebron_james.png'},
-	            {title: 'paul-george', imgPath: '/images/roster/paul_george.png'},
-	            {title: 'paul-millsap', imgPath: '/images/roster/paul_millsap.png'},
-	            {title: 'russell-westbrook', imgPath: '/images/roster/russell_westbrook.png'},
 	            {title: 'stephen-curry', imgPath: '/images/roster/stephen_curry.png'},
-	            {title: 'kevin-durant', imgPath: '/images/roster/kevin_durant.png'}
+	            {title: 'demarcus-cousins', imgPath: '/images/roster/demarcus_cousins.png'},
+				{title: 'chris-paul', imgPath: '/images/roster/chris_paul.png'},	           	            	            	            	            
+				{title: 'james-harden', imgPath: '/images/roster/james_harden.png'},		
+	            {title: 'russell-westbrook', imgPath: '/images/roster/russell_westbrook.png'},	            
+	            {title: 'kevin-durant', imgPath: '/images/roster/kevin_durant.png'},
+	            {title: 'lebron-james', imgPath: '/images/roster/lebron_james.png'},
+				{title: 'damian-lillard', imgPath: '/images/roster/damian_lillard.png'},
+				{title: 'kawhi-leonard', imgPath: '/images/roster/kawhi_leonard.png'},	            
+	            {title: 'jimmy-butler', imgPath: '/images/roster/jimmy_butler.png'},
+	            {title: 'klay-thompson', imgPath: '/images/roster/klay_thompson.png'},	           
+	            {title: 'john-wall', imgPath: '/images/roster/john_wall.png'},
+	            {title: 'paul-millsap', imgPath: '/images/roster/paul_millsap.png'}	           
 	        ]
 	    };
 	    return o;
@@ -94,58 +89,41 @@
 	    function($scope, playerRanks, rankings, roster){
 	        $scope.playerRanks = playerRanks.playerRanks;
 	        $scope.roster = roster.roster;
-	        $scope.submitter = "Enter your name";
-	        $scope.list1 = [];
-         	$scope.items = ['learn Sortable',
-                      'use gn-sortable',
-                     'Enjoy'];
-	        $scope.hello = "VITHUSHAN";
-	        $scope.rawScreens = [
-	            $scope.list1,
-	            $scope.roster
-	        ];
-	      
-	        $scope.sortableOptions = {
-	            placeholder: "app",
-	            connectWith: ".apps-container",
-	            update: function(event, ui) {
-	                // check that its an actual moving
-	                // between the two lists            
-	                if (event.target.id !== 'screen-0' && ui.item.sortable.droptarget.attr('id') === 'screen-0' && $scope.rawScreens[0].length >= 12) {
-	                    ui.item.sortable.cancel();
-	                }
-	            }
-	        };
+	        $scope.submitter = "";
 
-	        $scope.submit = function() {
-	            var len = Object.keys($scope.list1).length - 1;
+	        $scope.submit = function() {	            
 	            var result = {};
 	            var index = 1;
 
-	            for (var item in $scope.list1) {
-	                delete $scope.list1[item]['$$hashKey'];
-	                result[index] = $scope.list1[item];
+	            for (var item in $scope.roster) {
+	                delete $scope.roster[item]['$$hashKey'];
+	                result[index] = $scope.roster[item];
 	                index++;
 	            } 
 	            
-	            if (len == 12) {
-	                if ($scope.submitter != 'Enter your name') {
-	                    result['submitter'] = $scope.submitter;
-	                    delete result['13'];
-	                    rankings.create(JSON.stringify(result));    
-	                    alert("Thank you! Go to see results!");
-	                } else {
-	                    alert("Please enter your name");
-	                }
-	            } else {
-	                alert("NEED 12 selections, HAVE " + len);
-	            }
+	            // Use verifier?
+                if ($scope.submitter != '') {
+                    result['submitter'] = $scope.submitter;                                       
+                    rankings.create(JSON.stringify(result));    
+                    alert("Thank you! Go to see results!");
+                } else {
+                    alert("Please enter your name");
+                }	            
 	            
 	        }
 	    }]
 
 	);
 
+	app.controller('DraftCtrl', [
+	    '$scope',
+	    'rankings',
+	    function($scope, rankings){    
+	        $scope.rankings = rankings.rankings;
+
+	    }]
+
+	);
 
 
 	app.config([
@@ -168,11 +146,7 @@
 	        url: '/posts/draft-results',
 	        templateUrl: '/partials/posts/draft-results.html',
 	        controller: 'DraftCtrl',
-	        resolve: {
-	            postPromise: ['rankings', function(rankings){
-	                return rankings.getAll();
-	            }]
-	        }
+	       
 	    })
 	    .state('draft-retro', {
 	        url: '/posts/draft-retro',
