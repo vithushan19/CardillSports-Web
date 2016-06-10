@@ -1,39 +1,67 @@
+<!-- Banner -->
+<section id="banner">
+    
+    <img class="circular" src="images/jv.png">
+    <h2>Finals Preview</h2>
+    <p>Jvalant Dave</p>
+    <ul class="actions">
+        <li><a href="#posts/finals-preview" class="button big special">Read More</a></li>
+    </ul>
+</section>
+
 <!-- Page Content -->
 <div class="container">
 
-    <header class="jumbotron finals-preview">
-        <div class="article-header">
-            <h1>NBA Finals Preview</h1>
-            <p>JV Dave | Contributor</p>
-            <p>
-                <a href="#/posts/finals-preview" class="btn btn-danger btn-large">Read More</a>
-            </p>
-        </div> 
-    </header>
-
-    <!-- Title -->
-    <div class="row">
-        <div class="col-lg-12">
-            <h3 class="post-text">Latest Features</h3>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <div ng-repeat="article in articles">
-        <div class="col-md-3 col-sm-3 ">
-            <div class="thumbnail">
-                <img class="article-image" ng-src="{{article.imgPath}}" alt="">
-                <div class="caption">
-                    <h3 class="feature-label">{{article.title}}</h3>
-                    
-                    <p class="center-block">{{article.author}}</p>
-                    <p>
-                        <a href="{{article.link}}" class="btn btn-danger">Read More</a>
-                    </p>
+    <section id="one" class="wrapper style1">
+        <div class="inner">
+            <div ng-repeat="article in articles">
+                <div ng-if="$even">
+                    <article class="feature left">
+                        <span class="image"><img ng-src="{{article.imgPath}}" alt="" /></span>
+                        <div class="center-block content">
+                            <img class="circular" src="{{article.authorImg}}">
+                            <h2>{{article.title}}</h2>
+                            <p>{{article.author}}</p>
+                            <ul class="actions">
+                                <li>
+                                    <a href="{{article.link}}" class="button alt">Read More</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>  
                 </div>
-            </div>
+                <div ng-if="$odd">
+                    <article class="feature right">
+                        <span class="image"><img ng-src="{{article.imgPath}}" alt="" /></span>
+                        <div class="center-block content">
+                            <img class="circular" ng-src="{{article.authorImg}}">
+                            <h2>{{article.title}}</h2>
+                            <p>{{article.author}}</p>
+                            <ul class="actions">
+                                <li>
+                                    <a href="{{article.link}}" class="button alt">Read More</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>  
+                </div>
+            </div>         
         </div>
-    </div>
+    </section>
 
+
+
+        <!-- Three -->
+            <section id="three" class="wrapper style3 special">
+                <div class="inner">
+                    <header class="major narrow ">
+                        <h2>Meet The Team</h2>
+                        <p>We are a group of people passionate able all things sports</p>
+                    </header>
+                    <ul class="actions">
+                        <li><a href="#" class="button big alt">About Us</a></li>
+                    </ul>
+                </div>
+            </section>
     <!-- /.row -->
 </div>

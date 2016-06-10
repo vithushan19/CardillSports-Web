@@ -16,13 +16,13 @@
 
     <p><a id="go-back" class="btn btn-primary btn-large" href="#/posts/draft-retro">Go Back</a></p>
 
-    <div class="row result-row" ng-repeat="ranking in rankings">
+    <div class="result-row" ng-repeat="ranking in rankings">
       <p class="post-text">Submitter: {{ranking.submitter}}</p>
       <div ng-repeat="player in ranking">
         <div ng-if="$index < 12">
             <div id="{{player.title}}" class="col-lg-2 col-md-2 col-xs-2 draft-result">
                     <h3 class="draft-result-index">{{$index + 1}}</h3>
-                    <img class="center-block img-responsive draft-result-img" ng-src="{{player.imgPath}}" alt="">      
+                    <img class="center-bloc img-responsive ddraft-result-img" ng-src="{{player.imgPath}}" alt="">      
             </div>
         </div>
       </div>
