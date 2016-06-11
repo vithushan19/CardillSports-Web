@@ -1,25 +1,26 @@
 <!-- Banner -->
 <section id="banner">
     
-    <img class="circular" src="images/jv.png">
+    <img class="bannerImg circular" src="images/jv.png">
     <h2>Finals Preview</h2>
     <p>Jvalant Dave</p>
     <ul class="actions">
         <li><a href="#posts/finals-preview" class="button big special">Read More</a></li>
     </ul>
+
 </section>
 
 <!-- Page Content -->
 <div class="container">
 
-    <section id="one" class="wrapper style1">
+    <section id="articles" class="wrapper style1">
         <div class="inner">
             <div ng-repeat="article in articles">
                 <div ng-if="$even">
                     <article class="feature left">
                         <span class="image"><img ng-src="{{article.imgPath}}" alt="" /></span>
                         <div class="center-block content">
-                            <img class="circular" src="{{article.authorImg}}">
+                            <img class="circular" ng-src="{{article.authorImg}}">
                             <h2>{{article.title}}</h2>
                             <p>{{article.author}}</p>
                             <ul class="actions">
@@ -49,19 +50,17 @@
         </div>
     </section>
 
-
-
-        <!-- Three -->
-            <section id="three" class="wrapper style3 special">
-                <div class="inner">
-                    <header class="major narrow ">
-                        <h2>Meet The Team</h2>
-                        <p>We are a group of people passionate able all things sports</p>
-                    </header>
-                    <ul class="actions">
-                        <li><a href="#" class="button big alt">About Us</a></li>
-                    </ul>
-                </div>
-            </section>
+    <section id="about" class="wrapper style3 special">
+        <div class="inner">
+            <header class="major narrow ">
+                <h2>Meet The Team</h2>
+                <hr>
+                <p>We are a group of people passionate able all things sports</p>
+            </header>
+            <ul class="actions">
+                <li><a href="#" class="button big alt">About Us</a></li>
+            </ul>
+        </div>
+    </section>
     <!-- /.row -->
 </div>

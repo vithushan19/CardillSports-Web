@@ -1,3 +1,7 @@
+.bannerImage {
+  margin-top: 3.5em;
+}
+
 
 .circular {
   width: 100px;
@@ -5,6 +9,7 @@
   border-radius: 150px;
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
+  margin-bottom: 0.5em;
 }
 
 .cardillBody {
