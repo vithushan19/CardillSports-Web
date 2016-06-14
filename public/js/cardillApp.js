@@ -37,9 +37,9 @@
 	        templateUrl: '/pages/not-so-fast.html',
 	        
 	    })
-	    .state('f-clevland', {
-	        url: '/posts/f-clevland',
-	        templateUrl: '/pages/f-clevland.html',
+	    .state('tracks', {
+	        url: '/tracks',
+	        templateUrl: '/pages/tracks.html',
 	        
 	    })
 	    .state('power-of-veto', {
