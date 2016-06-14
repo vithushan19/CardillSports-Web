@@ -2,6 +2,9 @@
   margin-top: 3.5em;
 }
 
+.authorName {
+  margin-bottom: 0px;
+}
 
 .circular {
   width: 100px;

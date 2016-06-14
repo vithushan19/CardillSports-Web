@@ -4,6 +4,23 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  margin-left: 15px;
+  width: auto;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	color: white;
+}
+
+a {
+	text-decoration: none;
+}
+
 body {
     padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     background-color: #000000
@@ -18,27 +35,36 @@ body {
   height: 500px;
   color: white;
   text-shadow: #444 0 1px 1px;
-  background:transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   margin-top: 75px;
 }
 
 .article-header {
-	background-color: rgba(0,0,0,0.5);
-	border-style: groove;
+	background-color: rgba(0,0,0,0.6);
+	border-style: solid;
 	padding: 20px;
-	stroke: #FFFFFF 4px;
+	border-color: #1e2832;
+	border-width: 5px;
 	position: absolute;
 	left: 0;
 	bottom: 0;
 }
 
 .navbar {
-    margin-bottom: 70px;
+    margin-bottom: 0px;
 }
 
 .jumbotron h1 {
-	color: #FFFFFF
+	color: #FFFFFF;
+	margin-bottom: 0px;
+}
+
+@media screen and (max-width: 480px) {
+	.jumbotron h1 {		
+		font-size: 1.8em;
+	}
 }
 
 #copyright {
