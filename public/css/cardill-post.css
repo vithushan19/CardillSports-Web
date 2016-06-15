@@ -10,14 +10,33 @@
   margin-bottom: 0px;
 }
 
-.circular {
-  width: 100px;
-  height: 100px;
-  border-radius: 150px;
-  -webkit-border-radius: 150px;
-  -moz-border-radius: 150px;
-  margin-bottom: 0.5em;
+@media screen and (max-width: 1680px) {
+
+  .circular {
+    width: 100px;
+    height: 100px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    margin-bottom: 0.5em;
+  }
+
 }
+
+@media screen and (max-width: 670px) {
+
+  .circular {
+    width: 75px;
+    height: 75px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    margin-bottom: 0.5em;
+  }
+
+}
+
+
 
 .cardillBody {
   background-color: #1e2832;
