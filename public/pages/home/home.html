@@ -11,50 +11,44 @@
 <!-- Page Content -->
 <div class="container">
 
-<!--
-<div class="hovereffect">
-        <img class="img-responsive" src="http://placehold.it/350x200" alt="">
-        <div class="overlay">
-           <h2>Hover effect 1</h2>
-           <a class="info" href="#">link here</a>
-        </div>
-    </div>
--->
-
     <section id="articles" class="wrapper style1">
         <div class="inner">
             <div ng-repeat="article in articles">
                 <div ng-if="$even">
-                    <article class="feature left hovereffect">
-                        <span class="image ">
-                            <img  class="img-responsive hoveredImg" ng-src="{{article.imgPath}}" alt="" />
-                            <div class="overlay hoveredOverlay">
-                               <h2>Hover effect 1</h2>
-                               <a class="info" href="#">link here</a>
+                    <article class="feature left">
+                        <span class="image hovereffect">
+                            <img  class="img-responsive" ng-src="{{article.imgPath}}" alt="" />
+                            <div class="center-block content overlay">
+                                <img class="circular img-responsive" style="width:100px;border-radius:150px;" ng-src="{{article.authorImg}}">
+                                <h2>{{article.title}}</h2>
+                                <p>{{article.author}}</p>
+                                <ul class="actions">
+                                    <li>
+                                        <a href="{{article.link}}" class="button alt">Read More</a>
+                                    </li>
+                                </ul>
                             </div>
                         </span>
                         <div class="center-block content">
-                            <img class="circular" ng-src="{{article.authorImg}}">
-                            <h2>{{article.title}}</h2>
-                            <p>{{article.author}}</p>
-                            <ul class="actions">
-                                <li>
-                                    <a href="{{article.link}}" class="button alt">Read More</a>
-                                </li>
-                            </ul>
+                            <p class="article-description">{{article.description}}</p>
                         </div>
                     </article>  
                 </div>
                 <div ng-if="$odd">
-                    <article class="feature right">
-                        <span class="image"><img ng-src="{{article.imgPath}}" alt="" /></span>
-                        <div class="center-block content">
+                    <article class="feature right hovereffect2">
+                        <span ng-class="{spanHover: hover}" class="image">
+                            <img class="img-responsive" ng-src="{{article.imgPath}}" alt="" />
+                            <div class="center-block content overlay">
+                                <p>{{article.description}}</p>
+                            </div>
+                        </span>
+                        <div class="center-block content hoverOverlay">
                             <img class="circular" ng-src="{{article.authorImg}}">
                             <h2>{{article.title}}</h2>
                             <p>{{article.author}}</p>
                             <ul class="actions">
                                 <li>
-                                    <a href="{{article.link}}" class="button alt">Read More</a>
+                                    <a ng-mouseenter="hover = true" ng-mouseleave="hover = false" href="{{article.link}}" class="button alt">Read More</a>
                                 </li>
                             </ul>
                         </div>

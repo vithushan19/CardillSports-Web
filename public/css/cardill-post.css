@@ -1,3 +1,7 @@
+.article-decription {
+  text-transform: uppercase;
+}
+
 .bannerImage {
   margin-top: 3.5em;
 }
@@ -21,6 +25,7 @@
 
 .center-block {
   text-align: center;
+  color: white;
 }
 
 .post-text {
