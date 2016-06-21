@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module("cardillApp", ['ng-sortable', 'ui.router']);
+	var app = angular.module("cardillApp", ['ng-sortable', 'ui.router', 'angularGrid']);
 
 	app.config([
 	'$stateProvider',
@@ -56,6 +56,16 @@
 	        url: '/posts/the-day-i-said-what-if',
 	        templateUrl: '/pages/the-day-i-said-what-if.html',
 	        
+	    })
+	    .state('gallery', {
+	        url: '/gallery',
+	        templateUrl: '/pages/reddit/reddit.html',
+	        controller: 'RedditController',
+	        resolve: {
+   				postPromise: ['reddit', function(posts){
+      				return posts.getAll();
+    			}]
+    		}
 	    });
 
 
