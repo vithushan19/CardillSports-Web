@@ -5,7 +5,7 @@ angular.module('cardillApp').controller('RedditController', [
     'angularGridInstance',
     function($scope, $sce, reddit, angularGridInstance){   
     	$scope.vit = "raNCvto";
-        $scope.anu = "https://imgur.com/raNCvto";
+        $scope.anu = "https://imgur.com/raNCvto";        
     	$scope.getStreamableUrl = function (streamableSrc) {
             var splits = streamableSrc.split("/");
             return $sce.trustAsResourceUrl("https://streamable.com/e/" + splits[3] + "?muted=1&amp;autoplay=1");
@@ -29,12 +29,20 @@ angular.module('cardillApp').controller('RedditController', [
             return $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + splits[3]);
         };    	
         $scope.posts = reddit.posts.filter(function(post) {
-            return post.data.domain == "imgur.com"
+            var result = post.data.domain == "imgur.com"
                     || post.data.domain == "i.imgur.com"
+                    || post.data.domain == "m.imgur.com"
                     || post.data.domain == "youtu.be"
                     || post.data.domain == "youtube.com"
                     || post.data.domain == "streamable.com";
+
+            if (result == false) {
+                console.log("UNHANDLED DOMAIN: " + post.data.url);
+            } 
+            return result;
         });
+        $scope.after = reddit.after;
+        console.log("REDDIT AFTER: " + JSON.stringify($scope.after));
 
         //apply filter based on type
         $scope.showPostsofType  = function(){
@@ -45,5 +53,21 @@ angular.module('cardillApp').controller('RedditController', [
         $scope.refresh = function(){
             angularGridInstance.gallery.refresh();
         }
+
+        //method to load next data
+        $scope.loadMore = function(){            
+            reddit.getMore(reddit.after.after).then(function(nextPagePosts){
+                $scope.posts = reddit.posts.filter(function(post) {
+                    var result = post.data.domain == "imgur.com"
+                            || post.data.domain == "i.imgur.com"
+                            || post.data.domain == "m.imgur.com"
+                            || post.data.domain == "youtu.be"
+                            || post.data.domain == "youtube.com"
+                            || post.data.domain == "streamable.com";
+            
+                    return result;
+                });
+            });
+        };
     }]
 );

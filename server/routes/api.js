@@ -44,28 +44,35 @@ router.post('/ranking', function(req, res, next) {
 
 
 router.get('/reddit2', function(req, res, next) {  
-        requestController.getSampleData(function(result) {        
-            res.json(result);
-        });
+    requestController.getSampleData(function(result) {        
+        res.json(result);
+    });
 });
 
-router.get('/reddit', function(req, res, next) {  
+var getRedditPosts = function(req, res, next) {  
+    
+    var pathString = "/r/nba/top.json?sort=top&t=month&limit=100";
+    if (Object.keys(req.params).length !== 0) {
+        pathString = pathString + "&after=" + req.params.after;
+    }
+    
 
     var options = {
         host: 'www.reddit.com',
-        path: '/r/nba/top.json?sort=top&t=month',
+        path: pathString,
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
     };
 
-    requestController.getJSON(options, function(statusCode, result) {
-        // I could work with the result html/json here.  I could also just return it
-        console.log("onResult: (" + statusCode + ")" + JSON.stringify(result));
+    requestController.getJSON(options, function(statusCode, result) {    
         res.statusCode = statusCode;
         res.json(result);
     });
-});
+};
+
+router.get('/reddit/:after', getRedditPosts);
+router.get('/reddit', getRedditPosts);
 
 module.exports = router;
