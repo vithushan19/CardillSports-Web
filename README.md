@@ -48,9 +48,9 @@ app.js (web application starter file)
 
 This is the starter file that kicks off the web application; it declares the routes() of our application, where to find the views, and the connection url to the mongo database.
 
-#### server/views/index.ejs
+#### views/index.ejs
 
-All views for this application are found in the server/views folder. We are using the ejs view engine. Inside the views folder is a file named index.ejs which is loaded as the home page. Files with a .ejs extension are extremely similar to .html files, but is readable by the Express framework. In the body tag of index.ejs we use the "ng-app" attribute to declare that the AngularJS framework will be controlling the front-end. You'll notice a "<ui-view></ui-view>" in the body, this is where Angular will dynamically load content for the application. This website is actually a single-page application. We are always on the index.ejs page, but Angular dynamically swaps content in and out of the <ui-view></ui-view> section in that one page. You should declare all css stylesheets, and javascript files here.
+All views for this application are found in the views folder. We are using the ejs view engine. Inside the views folder is a file named index.ejs which is loaded as the home page. Files with a .ejs extension are extremely similar to .html files, but is readable by the Express framework. In the body tag of index.ejs we use the "ng-app" attribute to declare that the AngularJS framework will be controlling the front-end. You'll notice a "<ui-view></ui-view>" in the body, this is where Angular will dynamically load content for the application. This website is actually a single-page application. We are always on the index.ejs page, but Angular dynamically swaps content in and out of the <ui-view></ui-view> section in that one page. You should declare all css stylesheets, and javascript files here.
 
 #### server/routes
 
