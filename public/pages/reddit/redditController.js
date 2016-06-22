@@ -2,10 +2,19 @@ angular.module('cardillApp').controller('RedditController', [
     '$scope',
     '$sce',
     'reddit',
-    'angularGridInstance',
-    function($scope, $sce, reddit, angularGridInstance){   
+    function($scope, $sce, reddit){   
     	$scope.vit = "raNCvto";
-        $scope.anu = "https://imgur.com/raNCvto";        
+        $scope.anu = "https://imgur.com/raNCvto";      
+        $scope.getColSpan = function (domain) {
+            switch(domain) {
+                case "imgur.com":
+                case "i.imgur.com":
+                case "m.imgur.com": return "1"; break;
+                case "youtu.be":
+                case "youtube.com": return "2"; break;
+                case "streamable.com": return "2"; break;
+            }           
+        };
     	$scope.getStreamableUrl = function (streamableSrc) {
             var splits = streamableSrc.split("/");
             return $sce.trustAsResourceUrl("https://streamable.com/e/" + splits[3] + "?muted=1&amp;autoplay=1");
@@ -35,10 +44,6 @@ angular.module('cardillApp').controller('RedditController', [
                     || post.data.domain == "youtu.be"
                     || post.data.domain == "youtube.com"
                     || post.data.domain == "streamable.com";
-
-            if (result == false) {
-                console.log("UNHANDLED DOMAIN: " + post.data.url);
-            } 
             return result;
         });
         $scope.after = reddit.after;
@@ -51,7 +56,7 @@ angular.module('cardillApp').controller('RedditController', [
             });
         }
         $scope.refresh = function(){
-            angularGridInstance.gallery.refresh();
+            //angularGridInstance.gallery.refresh();
         }
 
         //method to load next data

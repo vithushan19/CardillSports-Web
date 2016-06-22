@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module("cardillApp", ['ng-sortable', 'ui.router', 'angularGrid']);
+	var app = angular.module("cardillApp", ['ng-sortable', 'ui.router', 'ngMaterial']);
 
 	app.config([
 	'$stateProvider',
@@ -67,6 +67,7 @@
     			}]
     		}
 	    });
+
 
 
 	  $urlRouterProvider.otherwise('home');
