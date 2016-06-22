@@ -33,17 +33,31 @@ angular.module('cardillApp').controller('RedditController', [
             return "http://i.imgur.com/" + splits[3] + ".jpg";
         };
 
-        $scope.getYoutubeEmbedUrl = function (youtubeSrc) {
+        $scope.getYoutubeShortEmbedUrl = function (youtubeSrc) {
             var splits = youtubeSrc.split("/");              
             return $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + splits[3]);
-        };    	
+        };   
+
+        $scope.getYoutubeEmbedUrl = function (youtubeSrc) {
+            var splits = youtubeSrc.split("/");  
+            var splits2 = splits[3].split("=");            
+            return $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + splits2[1]);
+        };   
+
         $scope.posts = reddit.posts.filter(function(post) {
-            var result = post.data.domain == "imgur.com"
+            
+            var includedDomains = post.data.domain == "imgur.com"
                     || post.data.domain == "i.imgur.com"
                     || post.data.domain == "m.imgur.com"
                     || post.data.domain == "youtu.be"
                     || post.data.domain == "youtube.com"
                     || post.data.domain == "streamable.com";
+
+            var excludedUrls = post.data.url.split("/")[3] === "gallery";
+
+            if (post.data.domain === "youtu.be") console.log(post.data.url);
+            if (post.data.domain === "youtube.com") console.log(post.data.url);
+            var result = includedDomains && !excludedUrls;
             return result;
         });
         $scope.after = reddit.after;

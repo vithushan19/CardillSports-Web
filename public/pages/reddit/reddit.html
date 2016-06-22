@@ -20,10 +20,15 @@
                              <img class="img-responsive" ng-src="{{getImgurDirectUrl(post.data.url)}}" alt="">         
                         </div>
                         
-                        <div ng-class="video-container" ng-if="post.data.domain == 'youtu.be' || post.data.domain == 'youtube.com'">                                                            
-                                <iframe class="video-container-frame" width="560" height="315" src='{{getYoutubeEmbedUrl(post.data.url)}}' frameborder='0' allowfullscreen></iframe>                        
-                    </div>
+                        <div ng-class="video-container" ng-if="post.data.domain == 'youtu.be'">                                                            
+                                <iframe class="video-container-frame" width="560" height="315" src='{{getYoutubeShortEmbedUrl(post.data.url)}}' frameborder='0' allowfullscreen></iframe>                        
+                        </div>
                         
+                        <div ng-class="video-container" ng-if="post.data.domain == 'youtube.com'">                                                            
+                                <iframe class="video-container-frame" width="560" height="315" src='{{getYoutubeEmbedUrl(post.data.url)}}' frameborder='0' allowfullscreen></iframe>                        
+                        </div>
+                        
+
                         <div ng-class="video-container" ng-if="post.data.domain == 'streamable.com'">
                                 <iframe class="video-container-frame" src="{{getStreamableUrl(post.data.url)}}" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen scrolling="no"></iframe>
                         </div>
