@@ -27,6 +27,8 @@ app.use(bodyParser.json());
 
 // Serve static files
 app.use('/assets', express.static(path.join(__dirname, 'assets'), {maxAge: 30}));
+app.use('/styles', express.static(path.join(__dirname, 'styles'), {maxAge: 30}));
+app.use('/js', express.static(path.join(__dirname, 'js'), {maxAge: 30}));
 app.use(express.static(path.join(ROOT, 'dist/client'), {index: false}));
 
 
@@ -40,6 +42,11 @@ import { ngApp } from './main.node';
 app.get('/', ngApp);
 app.get('/about', ngApp);
 app.get('/about/*', ngApp);
+
+app.get('/about-us', ngApp);
+app.get('/about-us/*', ngApp);
+app.get('/home2', ngApp);
+app.get('/home2/*', ngApp);
 app.get('/home', ngApp);
 app.get('/home/*', ngApp);
 
