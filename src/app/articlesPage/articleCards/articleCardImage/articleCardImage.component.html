@@ -6,12 +6,11 @@
             <div *ngIf="article.Description" class="ui basic segment">
                 <h4>{{ article.Description }} </h4>
             </div>
-            <div *ngIf="!article.Description && !article.Body" class="ui basic segment">
-                <h4>{{article.ArticleItems[0].Paragraph | truncate : 500 }} </h4>                
-                                
+            <div *ngIf="!article.Description && !article.Body" class="ui basic segment"> 
+                <h4 [innerHTML]="article.ArticleItems[0].Paragraph | truncate : 500"></h4>         
             </div>
             <div *ngIf="article.Body" class="ui basic segment">
-                <h4>{{article.Body | truncate : 500 }} </h4>                                 
+                <h4 [innerHTML]="article.Body | truncate : 500"></h4>                                 
             </div>
                 
         </div>

@@ -45,8 +45,8 @@ app.get('/about/*', ngApp);
 
 app.get('/about-us', ngApp);
 app.get('/about-us/*', ngApp);
-app.get('/home2', ngApp);
-app.get('/home2/*', ngApp);
+app.get('/articles', ngApp);
+app.get('/article/*', ngApp);
 app.get('/home', ngApp);
 app.get('/home/*', ngApp);
 
