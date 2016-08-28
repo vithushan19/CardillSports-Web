@@ -35,7 +35,7 @@ export class ArticlesPageComponent implements OnInit {
     if (data && this.articles) {
         // Search thru all the properties for the data string
         data = data.toUpperCase();
-        let props = ['Name','Owner'];
+        let props = ['Name','Creator'];
         let filtered = this.articles.filter(item => {
             let match = false;
             for (let prop of props) {            
@@ -45,7 +45,7 @@ export class ArticlesPageComponent implements OnInit {
                     break;
                   }
                 } else {  // 'Owner'
-                  let ownerProps = ['firstName', 'lastName'];
+                  let ownerProps = ['name'];
                   for (let ownerProp of ownerProps) {
                     if (item[prop][ownerProp].toString().toUpperCase().indexOf(data) > -1) {
                       match = true;
